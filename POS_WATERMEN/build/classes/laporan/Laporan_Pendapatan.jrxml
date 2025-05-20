@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ddf6125c-71e1-4563-8f2d-98cd9657b0e8">
+    <property name="ireport.zoom" value="1.7715610000000013"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <queryString language="SQL">
+		<![CDATA[SELECT
+    DATE_FORMAT(tanggal, '%Y-%m') AS bulan,
+    SUM(CASE WHEN sumber = 'pemasukan' THEN total ELSE 0 END) AS total_pemasukan,
+    SUM(CASE WHEN sumber = 'pengeluaran' THEN total ELSE 0 END) AS total_pengeluaran,
+    SUM(CASE WHEN sumber = 'pemasukan' THEN total ELSE 0 END) -
+    SUM(CASE WHEN sumber = 'pengeluaran' THEN total ELSE 0 END) AS pendapatan_bersih
+FROM (
+    SELECT tanggal, total, 'pemasukan' AS sumber FROM transaksi
+    UNION ALL
+    SELECT tanggal, total, 'pengeluaran' AS sumber FROM operasional
+) AS gabungan
+GROUP BY bulan
+ORDER BY bulan DESC;]]>
+    </queryString>
+    <field name="bulan" class="java.lang.String"/>
+    <field name="total_pemasukan" class="java.math.BigDecimal"/>
+    <field name="total_pengeluaran" class="java.math.BigDecimal"/>
+    <field name="pendapatan_bersih" class="java.math.BigDecimal"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="60" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="60" uuid="3e62f48e-fef0-45e2-bda1-c6eacd3727da"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="24" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Laporan Seluruh Pendapatan]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="10" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="30" splitType="Stretch">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="138" height="30" backcolor="#CCFFFF" uuid="19a04083-b026-4112-81c7-91b2ec6bb687"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Tahun-Bulan]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="138" y="0" width="138" height="30" backcolor="#CCFFFF" uuid="249aeffd-c743-4c8f-802a-9ad8552ab7ff"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Total Penjualan]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="276" y="0" width="138" height="30" backcolor="#CCFFFF" uuid="b61ef071-3333-477c-baf0-18ba02ee904f"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Total Operasional]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="414" y="0" width="141" height="30" backcolor="#CCFFFF" uuid="3ff2d6ae-16ae-4459-ae89-fb59012294a7"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Pendapatan]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="30" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="138" height="30" uuid="dda0beb9-9341-4999-9141-3fca9914e8ec"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{bulan}]]></textFieldExpression>
+            </textField>
+            <textField pattern="Rp #,##0.00 ">
+                <reportElement x="138" y="0" width="138" height="30" uuid="845b95ee-214a-40c9-8981-c5c7f3af555a"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{total_pemasukan}]]></textFieldExpression>
+            </textField>
+            <textField pattern="Rp #,##0.00 ">
+                <reportElement x="276" y="0" width="138" height="30" uuid="7513057d-e5a2-4da8-b918-ea2cb7553522"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{total_pengeluaran}]]></textFieldExpression>
+            </textField>
+            <textField pattern="Rp #,##0.00 ">
+                <reportElement x="414" y="0" width="141" height="30" uuid="8e55c751-787b-481b-841f-57716b75ae94"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{pendapatan_bersih}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aa7193ee-f57a-4d54-8c96-2c379df6ca80">
+    <property name="ireport.zoom" value="1.771561000000001"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="27"/>
+    <parameter name="id_transaksi" class="java.lang.Integer"/>
+    <queryString>
+		<![CDATA[SELECT QR_Image FROM transaksi WHERE id_transaksi= ${id_transaksi}]]>
+    </queryString>
+    <field name="QR_Image" class="java.lang.Object">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch"/>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="198" y="2" width="129" height="20" uuid="b0e34f4f-38b3-4fe3-a19b-1399ba2363b1"/>
+                <text><![CDATA[QR_Image]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="125" splitType="Stretch">
+            <image>
+                <reportElement x="198" y="0" width="222" height="125" uuid="dfa3a754-3a96-4972-84b1-e8fd595e503d"/>
+                <imageExpression><![CDATA[""+$F{QR_Image}$F{QR_Image}]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

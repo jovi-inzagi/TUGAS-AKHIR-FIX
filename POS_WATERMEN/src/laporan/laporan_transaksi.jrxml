@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0034b0fc-661f-46a9-b95a-eeec326022ea">
+    <property name="ireport.zoom" value="1.6105100000000039"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <queryString>
+		<![CDATA[select * from transaksi]]>
+    </queryString>
+    <field name="id_transaksi" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nama_customer" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="id_customer" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="id_kurir" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="jenis_customer" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="harga" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="jumlah" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="total" class="java.lang.Integer">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="tanggal" class="java.sql.Date">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="status" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="nama_kurir" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="jenis_kendaraan" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <field name="plat_nomor" class="java.lang.String">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="802" height="79" uuid="4a29e266-0984-4de3-81fc-9a5eb74e07cb"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Times New Roman" size="40" isBold="true"/>
+                </textElement>
+                <text><![CDATA[LAPORAN TRANSAKSI]]></text>
+            </staticText>
+            <image>
+                <reportElement x="46" y="-1" width="80" height="80" uuid="4dfb7004-9660-491f-a162-5f1b9e1140c1"/>
+                <imageExpression><![CDATA["../picture/watermen.png"]]></imageExpression>
+            </image>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="13" splitType="Stretch">
+            <line>
+                <reportElement x="0" y="1" width="801" height="1" uuid="517fa902-2e4b-48b3-8614-4340a79512a1"/>
+                <graphicElement>
+                    <pen lineWidth="3.0" lineStyle="Double"/>
+                </graphicElement>
+            </line>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="30" splitType="Stretch">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="56" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="105a3d6e-c52f-4b9b-bb86-806d75eda834"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ID Transaksi]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="56" y="0" width="89" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="27e7aa9a-9aaa-42d4-b2e8-e3c5558ffa66"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Nama Customer]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="145" y="0" width="59" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="fb095d34-82a9-4c7b-8aa2-7cc0741116e8"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ID Customer]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="204" y="0" width="84" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="24a8236d-e19e-4755-bfcc-c0453fa0e82f"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Jenis Customer]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="289" y="0" width="71" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="8354cddf-8a91-4cad-b5c8-9921786eb96e"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Harga]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="360" y="0" width="71" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="4178ddc8-cdef-4fc5-8d36-073fb5182b82"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Jumlah]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="431" y="0" width="69" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="686a2b13-81f4-4099-85e6-6e03f9399cb5"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Total]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="500" y="0" width="64" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="2ae46367-ad68-4ccd-a9c5-65d9d07b5d31"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Tanggal]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="564" y="0" width="67" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="c1b8fb2a-ab9a-4e93-ab45-136554da4791"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Status]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="631" y="0" width="53" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="260335bf-e226-4800-8c17-40265ee45142"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Nama Kurir]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="742" y="0" width="60" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="8f00bef1-58ae-4a8c-bb31-4abdcfed1a97"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[PLAT No]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="684" y="0" width="58" height="30" forecolor="#FFFFFF" backcolor="#000000" uuid="44b2a861-cbb6-4259-bbe9-49fc8fcd67e9"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Jenis Kendaraan]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="0" width="267" height="20" uuid="18d38413-b3e9-4d31-9666-6f326c4da2b9"/>
+                <text><![CDATA[nama_kurir]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="267" y="0" width="267" height="20" uuid="9c87b85a-d448-4635-a599-a7b031aceb12"/>
+                <text><![CDATA[jenis_kendaraan]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="534" y="0" width="267" height="20" uuid="0970aace-f82f-4c09-88c8-c22fe72a5ee0"/>
+                <text><![CDATA[plat_nomor]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="30" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="56" height="30" uuid="ed54d777-504b-490e-98ea-0378611bf40e"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id_transaksi}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="56" y="0" width="89" height="30" uuid="8937c37c-e10b-4838-925e-0f8f36a0bf2d"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nama_customer}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="145" y="0" width="59" height="30" uuid="d19c8c6d-84e4-483a-be1e-7c9a74c84b40"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id_customer}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="204" y="0" width="84" height="30" uuid="d2c13fe3-ab06-4d24-a647-f23b816dca3e"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{jenis_customer}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="289" y="0" width="71" height="30" uuid="dedee2d9-50b6-4704-8f41-791e897bb696"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="360" y="0" width="71" height="30" uuid="ef456af7-9608-43bf-b8c8-e8a0fc7a8e7a"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="431" y="0" width="69" height="30" uuid="680f586d-9ac9-4165-90d8-8e616e28da02"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="500" y="0" width="64" height="30" uuid="a5a796b9-7ecc-4c36-b786-9454327a8f4f"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.text.SimpleDateFormat("dd MMMM yyyy").format($F{tanggal})]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="564" y="0" width="67" height="30" uuid="3065fb3e-833c-45f7-a047-16cbfa0ca476"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Consolas" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="631" y="0" width="53" height="30" uuid="69c11299-d1a2-40be-b555-23f2a542b9e3"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{nama_kurir}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="684" y="0" width="58" height="30" uuid="f3f48650-5e55-401e-8b02-d11b71e1b881"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{jenis_kendaraan}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="742" y="0" width="59" height="30" uuid="2c371c25-b986-48b9-9acc-d1ae60cb52b1"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0"/>
+                    <leftPen lineWidth="1.0"/>
+                    <bottomPen lineWidth="1.0"/>
+                    <rightPen lineWidth="1.0"/>
+                </box>
+                <textFieldExpression><![CDATA[$F{plat_nomor}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="30" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch">
+            <line>
+                <reportElement x="0" y="0" width="801" height="1" uuid="c063d6d9-9bf3-4a68-8aef-2b49a66469cb"/>
+            </line>
+            <textField>
+                <reportElement x="0" y="34" width="100" height="20" uuid="ac9a8ded-a73e-4d69-894c-df2a5922c6b8"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="665" y="10" width="136" height="15" uuid="8c0d2c79-dcac-44c7-b49b-2cf0e6edea54"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[TANGGAL CETAK]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="665" y="16" width="136" height="38" uuid="721b7be5-c942-4341-85cf-1a3a82f53c31"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="10" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date())]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>

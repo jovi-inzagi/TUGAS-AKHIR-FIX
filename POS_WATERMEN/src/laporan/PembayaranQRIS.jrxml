@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9aff071f-676a-4b7b-94e2-b82e20d1e404">
+    <property name="ireport.zoom" value="1.610510000000001"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <queryString>
+		<![CDATA[SELECT QR_Image FROM barcode WHERE id_barcode= id_barcode]]>
+    </queryString>
+    <field name="QR_Image" class="java.lang.Object">
+        <fieldDescription><![CDATA[]]></fieldDescription>
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="79" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="554" height="79" uuid="16d1f51d-6a46-4503-bcde-6b845b24fd8f"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="30" isBold="true" isStrikeThrough="false"/>
+                </textElement>
+                <text><![CDATA[QR Pembayaran]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="35" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="554" height="42" uuid="7e9d1a2f-1097-442a-a53c-49dc3ed9f9b2"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isStrikeThrough="false"/>
+                </textElement>
+                <text><![CDATA[QR Pembayaran]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="300" splitType="Stretch">
+            <image hAlign="Center" vAlign="Middle" isUsingCache="true">
+                <reportElement x="0" y="0" width="554" height="300" uuid="f83ef32c-e97c-4ec2-a883-94c7c1b4d5f8"/>
+                <imageExpression><![CDATA[new java.io.ByteArrayInputStream($F{QR_Image})]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="54" splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band height="42" splitType="Stretch"/>
+    </summary>
+</jasperReport>
